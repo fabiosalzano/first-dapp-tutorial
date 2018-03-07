@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>(yet another) build your first dapp tutorial | imfab.io </title>
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">imfab.io</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Ethereum Meeting Rooms Booking<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://medium.com/@fabiosalzano">My Medium profile</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="https://medium.com/@fabiosalzano/">The tutorial</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="https://github.com/fabiosalzano">My GitHub profile</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+		<div class="container">
+			<h1 class="display-3">Ethereum Meeting Rooms Booking</h1>
+			<p>This is a simple example of decentralized application built on the Ethereum platform. <a href="">Here</a> you can find the tutorial that explains the DApp in all its parts, starting with the setting of the development tools.</p>
+			
+			<p>Bookings will be stored in the <a href="http://truffleframework.com/ganache/">Ganache</a> test blockchain. Obviously it is not possible to book a time slot if it is already booked. You can not book a time slot in a meeting room if you have already booked the same slot in another room. Your booked slots are yellow; the slots booked by other users are red.</p>
+				
+			<p>Below you can change account between the 10 test accounts provided by Ganache.</p></p>
+			
+			<div class="row">
+				<div class="col">
+					<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="accountsSwitcher" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Account #0
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="accountsSwitcher">
+						<a class="dropdown-item eth-account" href="#" data-account="0">Account #0</a>
+						<a class="dropdown-item eth-account" href="#" data-account="1">Account #1</a>
+						<a class="dropdown-item eth-account" href="#" data-account="2">Account #2</a>
+						<a class="dropdown-item eth-account" href="#" data-account="3">Account #3</a>
+						<a class="dropdown-item eth-account" href="#" data-account="4">Account #4</a>
+						<a class="dropdown-item eth-account" href="#" data-account="5">Account #5</a>
+						<a class="dropdown-item eth-account" href="#" data-account="6">Account #6</a>
+						<a class="dropdown-item eth-account" href="#" data-account="7">Account #7</a>
+						<a class="dropdown-item eth-account" href="#" data-account="8">Account #8</a>
+						<a class="dropdown-item eth-account" href="#" data-account="9">Account #9</a>			
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="container">
+
+		<div class="row">
+			<div class="col meeting-room-cont" data-meeting-room="0">
+				<h2>Orange Room</h2>
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="col">
+								<ul class="list-group">
+									<li class="list-group-item" data-slot="0">9 a.m. - 10 a.m.</li>
+									<li class="list-group-item" data-slot="1">10 a.m. - 11 a.m.</li>
+									<li class="list-group-item" data-slot="2">11 a.m. - 12 a.m.</li>
+									<li class="list-group-item" data-slot="3">12 a.m. - 1 p.m.</li>
+									<li class="list-group-item disabled">1 p.m. - 2 p.m. (lunch time!)</li>
+									<li class="list-group-item" data-slot="4">2 p.m. - 3 p.m.</li>
+									<li class="list-group-item" data-slot="5">3 p.m. - 4 p.m.</li>
+									<li class="list-group-item" data-slot="6">4 p.m. - 5 p.m.</li>
+									<li class="list-group-item" data-slot="7">5 p.m. - 6 p.m.</li>						
+								</ul>
+							</div>
+							<div class="col">
+								<div class="d-flex justify-content-between">
+									<div class="form-group">
+										<label for="start-time-1">Start time</label>
+										<select class="form-control start-time" id="start-time-1" data-room="0">
+											<option value="">Choose</option>
+											<option value="0">9 a.m.</option>
+											<option value="1">10 a.m.</option>
+											<option value="2">11 a.m.</option>
+											<option value="3">12 a.m.</option>
+											<option value="4">2 p.m.</option>
+											<option value="5">3 p.m.</option>
+											<option value="6">4 p.m.</option>
+											<option value="7">5 p.m.</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="end-time-1">End time</label>
+										<select class="form-control end-time" id="end-time-1" data-room="0" disabled>
+											<option value="">Choose</option>
+											<option value="1">10 a.m.</option>
+											<option value="2">11 a.m.</option>
+											<option value="3">12 a.m.</option>
+											<option value="4">1 p.m.</option>
+											<option value="5">3 p.m.</option>
+											<option value="6">4 p.m.</option>
+											<option value="7">5 p.m.</option>
+											<option value="8">6 p.m.</option>
+										</select>
+									</div>
+								</div>
+								<div class="alert my-1" role="alert" data-room="0"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button type="button" class="btn btn-primary mr-2" data-room="0" data-action="book" disabled>Book selected</button>
+								<button type="button" class="btn btn-danger" data-room="0" data-action="free" disabled>Cancel selected</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col meeting-room-cont" data-meeting-room="1">
+				<h2>Yellow Room</h2>
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="col">
+								<ul class="list-group">
+									<li class="list-group-item" data-slot="0">9 a.m. - 10 a.m.</li>
+									<li class="list-group-item" data-slot="1">10 a.m. - 11 a.m.</li>
+									<li class="list-group-item" data-slot="2">11 a.m. - 12 a.m.</li>
+									<li class="list-group-item" data-slot="3">12 a.m. - 1 p.m.</li>
+									<li class="list-group-item disabled">1 p.m. - 2 p.m. (lunch time!)</li>
+									<li class="list-group-item" data-slot="4">2 p.m. - 3 p.m.</li>
+									<li class="list-group-item" data-slot="5">3 p.m. - 4 p.m.</li>
+									<li class="list-group-item" data-slot="6">4 p.m. - 5 p.m.</li>
+									<li class="list-group-item" data-slot="7">5 p.m. - 6 p.m.</li>							
+								</ul>
+							</div>
+							<div class="col">
+								<div class="d-flex justify-content-between">
+									<div class="form-group">
+										<label for="start-time-2">Start time</label>
+										<select class="form-control start-time" data-room="1">
+											<option value="">Choose</option>
+											<option value="0">9 a.m.</option>
+											<option value="1">10 a.m.</option>
+											<option value="2">11 a.m.</option>
+											<option value="3">12 a.m.</option>
+											<option value="4">2 p.m.</option>
+											<option value="5">3 p.m.</option>
+											<option value="6">4 p.m.</option>
+											<option value="7">5 p.m.</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="end-time-2">End time</label>
+										<select class="form-control end-time" id="end-time-2" disabled data-room="1">
+											<option value="">Choose</option>
+											<option value="1">10 a.m.</option>
+											<option value="2">11 a.m.</option>
+											<option value="3">12 a.m.</option>
+											<option value="4">1 p.m.</option>
+											<option value="5">3 p.m.</option>
+											<option value="6">4 p.m.</option>
+											<option value="7">5 p.m.</option>
+											<option value="8">6 p.m.</option>
+										</select>
+									</div>
+								</div>
+								<div class="alert my-1" role="alert" data-room="1"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<button type="button" class="btn btn-primary mr-2" data-room="1" data-action="book" disabled>Book selected</button>
+								<button type="button" class="btn btn-danger" data-room="1" data-action="free" disabled>Cancel selected</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	  
+	<hr>
+
+	<footer class="container">
+		<p>imfab.io 2018</p>
+	</footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/vendors/ie10-viewport-bug-workaround.js"></script>
+	
+	<script src="js/vendors/web3.min.js"></script>
+	
+	<!-- Booking DApp Javascript -->
+	<script src="js/app.js"></script>
+  </body>
+</html>
