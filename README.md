@@ -6,19 +6,19 @@ Here's the tutorial: https://medium.com/@fabiosalzano/yet-another-build-your-fir
 
 Download the repository. Open a command prompt and place it within the project folder.
 
-First of all, you need to have NodeJs installed on your pc. In your command prompt type the following commands:
+First of all, you need to have NodeJs installed on your pc. After installing NodeJs, in your command prompt type the following commands:
 
 ```sh
 $ npm install ganache-cli web3 solc
 ```
 
-To start listening for communication between eh dapp and the Ganache network, you have to type: 
+To start listening for communications between the Dapp and Ganache, you have to type: 
 
 ```sh
 $ node_modules\.bin\ganache-cli
 ```
 
-In an another command prompt window, you can deploy the smart contract you found in the project just typing this command:
+Open another command prompt window, and deploy the smart contract you found in the project just typing this command:
 
 ```sh
 $ node deploy.js --contractPath=contracts/Booking.sol --contractName=Booking --contractInputParams=OrangeRoom,YellowRoom
