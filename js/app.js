@@ -65,6 +65,9 @@ function setTimeSlots() {
                                 $slot.removeClass(`list-group-item-${removeClass}`).addClass(`list-group-item-${addClass}`);
                             });
                     }
+                    else {
+                        $slot.removeClass('list-group-item-warning list-group-item-danger');
+                    }
                 });
         }
     }
